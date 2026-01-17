@@ -7,7 +7,7 @@ Ce repo contiendra ici toutes les ressources et fiches de cours concernant le co
 
 ## Jour 1
 
-- Histoire de l'Active Directory
+- Histoire de Windows Server
 - Principes théoriques et organisation d'une entreprise sur un AD
 - Partie chiante et théorique (mais nécessaire) sur le fonctionnement d'un AD
 - On installe un Windows Server 2022 et un W11 optimisés
@@ -15,8 +15,6 @@ Ce repo contiendra ici toutes les ressources et fiches de cours concernant le co
 - On lie les deux ensemble dans le même domaine
   - On passe le WS2022 en tant que contrôleur de domaine
   - On joint le W11 dans le domaine
-
-
 
 ## Jour 2
 
