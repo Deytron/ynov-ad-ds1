@@ -63,7 +63,7 @@ Chaque AD tient un domaine, qui est généralement au format **nomentreprise.zon
 
 Sur des très grosses entreprises, il est possible d'avoir des **forêt**, et là le nom parle littéralement de lui-même. Vous pouvez disposer de plusieurs domaines dans une forêt. Exemple toujours avec Ynov : 
 
--  `bordeaux.ynov.local`
+- `bordeaux.ynov.local`
 
 - `paris.ynov.local`
 
@@ -85,6 +85,30 @@ La forêt définit :
 
 Comme prévu dans le README, on va prévoir les choses comme ceci : 
 
-- On va créer 
+- On va créer un domaine, avec les composants de base, à savoir :
+  - Un Windows Server 2022 contrôleur de domaine
+  - Une machine Windows 11 qui servira de client test pour se connecter au domaine
+- Ce domaine portera le nom que vous souhaitez, en gardant la nomenclature type `aaa.bbb` ou `aaa.bbb.ccc`.
+- On intégrera le PC Windows 11 dans le domaine et on créera des utilisateurs tests pour voir s'ils peuvent se connecter
 
-# Objectif
+---
+
+# Étapes
+
+- [ ]  Télécharger les ISO de Windows Server 2022 et Windows 1
+   Vous pouvez les trouver à ces adresses : [Télécharger Windows Server 2022 (64 bits) (gratuit) – Systèmes d’exploitation – Le Crabe Info](https://lecrabeinfo.net/telecharger/windows-server-2022-x64/) et [Télécharger les ISO de Windows 11 (64 bits) (français) – Le Crabe Info](https://lecrabeinfo.net/tutoriels/telecharger-iso-windows-11/)
+
+- [ ]  Téléchargez et installez l'hyperviseur selon votre OS
+   Si vous êtes sur Windows : Faites simple et téléchargez [Vmware Workstation]([VMWare Workstation Pro 25H2 Download | TechPowerUp](https://www.techpowerup.com/download/vmware-workstation-pro/)) qui a été rendu complètement gratuit
+   Si vous êtes sur Mac : ...J'en ai aucune foutre idée, on verra sur place
+   Si vous êtes sur Linux : Vous avez le choix. Ça change selon votre distrib. Je vous conseille d'utiliser Libvirt, autrement vous pouvez installer VirtualBox ou Vmware Workstation
+
+- [ ]  Procédez à l'installation de la VM Windows Server 2022. Mettez-y 2 vCPU et minimum 4Go de RAM, et 50Go d'espace disque
+
+- [ ]  Procédez à l'installation de la VM Windows 11. Mettez-y 2 vCPU, 4Go de RAM et 30Go d'espace disque.
+
+- [ ] Sur les deux VM, le paramétrage initial est identique. Partitionnez les disques, entrez un mot de passe pour le compte administrateur local et **notez-le quelque part**
+
+- [ ] Une fois les VM sur le bureau, paramétrez le réseau de vos VM en IP fixe selon le réseau virtuel donné par votre hyperviseur
+
+- [ ] Assurez-vous que les deux VM puissent communiquer entre elles, normalement sans configuration de base, elles sont dans le même réseau
