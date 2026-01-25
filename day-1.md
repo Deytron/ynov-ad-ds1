@@ -95,20 +95,31 @@ Comme prévu dans le README, on va prévoir les choses comme ceci :
 
 # Étapes
 
-- [ ]  Télécharger les ISO de Windows Server 2022 et Windows 1
-   Vous pouvez les trouver à ces adresses : [Télécharger Windows Server 2022 (64 bits) (gratuit) – Systèmes d’exploitation – Le Crabe Info](https://lecrabeinfo.net/telecharger/windows-server-2022-x64/) et [Télécharger les ISO de Windows 11 (64 bits) (français) – Le Crabe Info](https://lecrabeinfo.net/tutoriels/telecharger-iso-windows-11/)
+- [ ] Télécharger les ISO de Windows Server 2022 et Windows 1
+  Vous pouvez les trouver à ces adresses : [Télécharger Windows Server 2022 (64 bits) (gratuit) – Systèmes d’exploitation – Le Crabe Info](https://lecrabeinfo.net/telecharger/windows-server-2022-x64/) et [Télécharger les ISO de Windows 11 (64 bits) (français) – Le Crabe Info](https://lecrabeinfo.net/tutoriels/telecharger-iso-windows-11/)
 
-- [ ]  Téléchargez et installez l'hyperviseur selon votre OS
-   Si vous êtes sur Windows : Faites simple et téléchargez [Vmware Workstation]([VMWare Workstation Pro 25H2 Download | TechPowerUp](https://www.techpowerup.com/download/vmware-workstation-pro/)) qui a été rendu complètement gratuit
-   Si vous êtes sur Mac : ...J'en ai aucune foutre idée, on verra sur place
-   Si vous êtes sur Linux : Vous avez le choix. Ça change selon votre distrib. Je vous conseille d'utiliser Libvirt, autrement vous pouvez installer VirtualBox ou Vmware Workstation
+- [ ] Téléchargez et installez l'hyperviseur selon votre OS
+  Si vous êtes sur Windows : Faites simple et téléchargez [Vmware Workstation]([VMWare Workstation Pro 25H2 Download | TechPowerUp](https://www.techpowerup.com/download/vmware-workstation-pro/)) qui a été rendu complètement gratuit
+  Si vous êtes sur Mac : ...J'en ai aucune foutre idée, on verra sur place
+  Si vous êtes sur Linux : Vous avez le choix. Ça change selon votre distrib. Je vous conseille d'utiliser Libvirt, autrement vous pouvez installer VirtualBox ou Vmware Workstation
 
-- [ ]  Procédez à l'installation de la VM Windows Server 2022. Mettez-y 2 vCPU et minimum 4Go de RAM, et 50Go d'espace disque
+- [ ] Procédez à l'installation de la VM Windows Server 2022. Mettez-y 2 vCPU et minimum 4Go de RAM, et 50Go d'espace disque
 
-- [ ]  Procédez à l'installation de la VM Windows 11. Mettez-y 2 vCPU, 4Go de RAM et 30Go d'espace disque.
+- [ ] Procédez à l'installation de la VM Windows 11. Mettez-y 2 vCPU, 4Go de RAM et 30Go d'espace disque.
 
 - [ ] Sur les deux VM, le paramétrage initial est identique. Partitionnez les disques, entrez un mot de passe pour le compte administrateur local et **notez-le quelque part**
 
 - [ ] Une fois les VM sur le bureau, paramétrez le réseau de vos VM en IP fixe selon le réseau virtuel donné par votre hyperviseur
 
 - [ ] Assurez-vous que les deux VM puissent communiquer entre elles, normalement sans configuration de base, elles sont dans le même réseau
+
+# Créer un domaine
+
+Il va être temps de créer un domaine. Comme expliqué avant, ce domaine va servir à lier tous vos PC pour y appliquer des règles entre autre, histoire qu'ils soient tous quasi identiques.
+Pour créer un domaine, rendez-vous sur votre machine Windows Server (n'hésitez pas à activer le RDP si ce n'est pas fait).
+
+Ensuite, pas besoin de réinviter la roue. [Ce tutoriel explique très bien de manière textuelle ce qu'il faut faire]([Créer un domaine Active Directory avec Windows Server](https://www.it-connect.fr/creer-un-domaine-ad-avec-windows-server-2016/)).
+
+# Rejoindre le domaine
+
+Une fois le domaine créé et les étapes de redémarrage insupportables de la machine faites, [faites rejoindre le domaine avec votre PC Windows 11]([Joindre un PC Windows 10 au domaine, peu importe la version | IT-Connect](https://www.it-connect.fr/joindre-un-pc-windows-10-au-domaine-peu-importe-la-version/)).
