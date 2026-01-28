@@ -146,4 +146,8 @@ Une fois le rôle installé, vous vous apercevrez que vous allez très vite êtr
 
 🌞 Enfin, suivez la suite du tutoriel pour mettre en place les sessions RDS
 
-## Publication d'une RemoteApp
+🌞 Une fois tout en place, testez l'utilisation d'une session RDS avec un user d'une de vos OU dans un groupe ayant accès au DC en Bureau à Distance
+
+> À titre d'expérimentation, sur la GPO créée précédemment, ajoutez le groupe de votre utilisateur comme Autorisé à se connecter via le bureau à distance
+
+# 
