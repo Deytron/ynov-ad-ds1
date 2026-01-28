@@ -106,8 +106,34 @@ Vous voyez donc ici l'intérêt du tiering : si un compte admin se fait péter, 
 
 # Les rôles d'un AD
 
-Vous l'avez vu lors de l'ajout de rôles, il y en a plein, qui diffèrent en plus selon le niveau fonctionnel de la forêt.
+Vous l'avez vu lors de l'ajout de rôles, il y en a plein, qui diffèrent en plus selon le niveau fonctionnel de la forêt. On va voir les plus utilisés en entreprise
 
 ## DHCP
 
+Le but d'un serveur DHCP dans un réseau est de donner une adresse IP aux machines. Dans le contexte du domaine ici, toute machine jointe au domaine doit pouvoir bénéficier d'une IP dans une étendue donnée.
+
+<img src="https://lh5.googleusercontent.com/proxy/iQtsUAXXjJ7ijBj0YhFy0EfQz7OPD7Jl4Xe4Wg8euLB1DArih3O72Yb8wsD8d89wxNrAU3fopGcEhnpzBALxF8e4e_JlGSKQJC9aLWFNiLRWovQPUtvK" title="" alt="Redondance de serveurs DHCP sous Linux | Services | IT-Connect" width="435">
+
 ## DNS
+
+Avec un serveur DNS, vous donnez aux postes du domaine un système de reconnaissance par nom plutôt que par IP. Il y a tout un tas d'options disponibles sur une solution Windows Server.
+
+<img src="https://kb.planethoster.com/wp-content/uploads/2021/08/DNS.jpg" title="" alt="" width="709">
+
+## RDS
+
+RDS, ou **Remote Desktop Services**, est un système permettant à des utilisateurs d'accéder à un bureau virtuel avec une session propre à lui. Les termes RDS et **RemoteApp** sont souvent utilisés conjointement, car il est possible de lancer des applications à distance, comme si c'était un bureau, mais ne présentant que l'application.
+
+L'installation d'un rôle RDS se fait sur un DC, et toute la gestion des droits et permissions se fait avec les GPO.
+
+Dans une ferme RDS standard, il y a normalement plusieurs machines pour équilibrer la charge, avec un broker devant. Le broker sert entre autre de passerelle, pour rediriger les utilisateurs souhaitant ouvrir une session.
+
+![Windows | Mise en place d'une ferme RDS sur Windows Server](https://std.rocks/fr/images/microsoft/rds_farm/051-rds-farm-architecture-diagram.webp)
+
+On va mettre un serveur RDS en place.
+
+🌞 Sur votre DC, ajoutez le rôle RDS de type **Démarrage rapide** et basé sur **une session**.
+
+Toutes les étapes sont disponibles ici : [Déploiement rapide d’un serveur RDS avec Windows Server 2016 | IT-Connect](https://www.it-connect.fr/deploiement-rapide-dun-serveur-rds-avec-windows-server-2016/)
+
+![](assets/2026-01-28-19-35-01-image.png)
