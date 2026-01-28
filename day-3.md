@@ -128,12 +128,22 @@ L'installation d'un rôle RDS se fait sur un DC, et toute la gestion des droits 
 
 Dans une ferme RDS standard, il y a normalement plusieurs machines pour équilibrer la charge, avec un broker devant. Le broker sert entre autre de passerelle, pour rediriger les utilisateurs souhaitant ouvrir une session.
 
-![Windows | Mise en place d'une ferme RDS sur Windows Server](https://std.rocks/fr/images/microsoft/rds_farm/051-rds-farm-architecture-diagram.webp)
+![](assets/2026-01-28-19-38-10-image.png)
 
 On va mettre un serveur RDS en place.
+
+---
 
 🌞 Sur votre DC, ajoutez le rôle RDS de type **Démarrage rapide** et basé sur **une session**.
 
 Toutes les étapes sont disponibles ici : [Déploiement rapide d’un serveur RDS avec Windows Server 2016 | IT-Connect](https://www.it-connect.fr/deploiement-rapide-dun-serveur-rds-avec-windows-server-2016/)
 
 ![](assets/2026-01-28-19-35-01-image.png)
+
+Une fois le rôle installé, vous vous apercevrez que vous allez très vite être limité en nombre d'utilisateurs maximum connectés, car chaque utilisateur va vous bouffer une licence. Par connexion. De ce fait, vous allez avoir besoin d'un gestionnaire de licences.
+
+🌞 Ajoutez le gestionnaire de licences, et corrigez les propriétés de déploiement
+
+🌞 Enfin, suivez la suite du tutoriel pour mettre en place les sessions RDS
+
+## Publication d'une RemoteApp
