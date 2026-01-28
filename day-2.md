@@ -109,11 +109,7 @@ Name             SamAccountName
 Julien Morana     jmorana    
 ```
 
-# Un peu de sécurité : le principe du Tiering
-
-Récemment (genre depuis une dizaine d'années hein), Microsoft, l'ANSSI et tous les pros dans le domaine, se sont penchés sur la problématique de **l'admin du domaine**. Avec un compte pété, un attaquant a accès à littéralement toute votre infrastructure en tant qu'admin, ce qui est une catastrophe. L'approche du Tiering **permet** de réduire le risque encouru d'un compte admin compromis en cloisonnant proprement les ressources dans un AD.
-
-[Vous pouvez retrouver toutes les infos textuelles sur le tiering ici.]([Sécuriser Active Directory : comprendre le Tiering Model](https://www.it-connect.fr/active-directory-tiering-model-les-fondamentaux/))
+# 
 
 # On va manipuler un peu
 
@@ -144,8 +140,4 @@ Récemment (genre depuis une dizaine d'années hein), Microsoft, l'ANSSI et tous
 
 🌞 Sur le PC Windows 11, avec le RDP activé, créez un groupe qui permet d'autoriser un utilisateur à se connecter à distance à ce PC
 
-## Plus de manips
-
-🐸 Allez plus loin : sur le modèle du tiering, faites les trois tiers dans votre AD
-
-🐸 Créez des comptes admins avec chacun un tier d'accès assigné
+# 

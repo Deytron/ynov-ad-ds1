@@ -29,6 +29,8 @@ Ce repo contiendra ici toutes les ressources et fiches de cours concernant le co
 
 - Si c'est pas fini, on hiérarchise l'AD comme il faut
 
+- Un peu de GPO avec le tiering
+
 - Présentation des différents rôles d'un AD
   
   - Serveur de fichiers
