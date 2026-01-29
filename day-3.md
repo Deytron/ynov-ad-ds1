@@ -83,14 +83,6 @@ Là maintenant, est-ce que votre utilisateur `administrateur local` peut se conn
   - **Allow log on through Remote Desktop Services**
     
     - Tout pareil
-  
-  - **Explicitly block others***
-    
-    - Ajoutez le groupe `Utilisateurs du domaine` pour bloquer tout le monde sauf ceux autorisés à se connecter aux DC
-  
-  - **Deny log on through Remote Desktop Services***
-    
-    - Tout pareil
 
 🌞 Une fois la GPO créée et liée à l'OU DC, faites les tests. Avec un utilisateur du groupe T0, tentez de vous connecter sur le DC localement.
 Que se passe-t-il ?
@@ -136,7 +128,7 @@ On va mettre un serveur RDS en place.
 
 ---
 
-🌞 Sur votre DC, ajoutez le rôle RDS de type **Démarrage rapide** et basé sur **une session**.
+🐸 Sur votre DC, ajoutez le rôle RDS de type **Démarrage rapide** et basé sur **une session**.
 Prenez une capture d'écran de la page d'informations du rôle dans le Gestionnaire de serveur.
 
 Toutes les étapes sont disponibles ici : [Déploiement rapide d’un serveur RDS avec Windows Server 2016 | IT-Connect](https://www.it-connect.fr/deploiement-rapide-dun-serveur-rds-avec-windows-server-2016/)
@@ -145,11 +137,11 @@ Toutes les étapes sont disponibles ici : [Déploiement rapide d’un serveur RD
 
 Une fois le rôle installé, vous vous apercevrez que vous allez très vite être limité en nombre d'utilisateurs maximum connectés, car chaque utilisateur va vous bouffer une licence. Par connexion. De ce fait, vous allez avoir besoin d'un gestionnaire de licences.
 
-🌞 Ajoutez le gestionnaire de licences, et corrigez les propriétés de déploiement.
+🐸 Ajoutez le gestionnaire de licences, et corrigez les propriétés de déploiement.
 Vous devriez ne plus avoir le message demandant une correction.
 Enfin, suivez la suite du tutoriel pour mettre en place les sessions RDS
 
-🌞 Une fois tout en place, testez l'utilisation d'une session RDS avec un user d'une de vos OU dans un groupe ayant accès au DC en Bureau à Distance, via la machine Windows 11.
+🐸 Une fois tout en place, testez l'utilisation d'une session RDS avec un user d'une de vos OU dans un groupe ayant accès au DC en Bureau à Distance, via la machine Windows 11.
 
 > À titre d'expérimentation, sur la GPO liée au DC créée précédemment, ajoutez le groupe de votre utilisateur comme **Autorisé à se connecter via le bureau à distance**
 
