@@ -3,6 +3,8 @@
 Cours Active Directory DS 1 : configuration initiale (59H00) pour Ynov
 Ce repo contiendra ici toutes les ressources et fiches de cours concernant le cours Active Directory.
 
+> Pour chaque petit soleil 🌞 présent, il y a une action à noter dans votre compte-rendu
+
 # Planning
 
 ## Jour 1
@@ -41,7 +43,7 @@ Ce repo contiendra ici toutes les ressources et fiches de cours concernant le co
   
   - RemoteApps et Broker RDS
 
-- On met en place un serveur de fichiers
+- On met en place un broker RDS
 
 - On définit un accès à certains dossiers à certains groupes autorisés
 

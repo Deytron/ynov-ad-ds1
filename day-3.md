@@ -12,11 +12,12 @@ Récemment (genre depuis une dizaine d'années hein), Microsoft, l'ANSSI et tous
 
 ![The Fundamentals of AD tiering](https://itm8.com/hs-fs/hubfs/Billeder/Blog/example-tiering-ou-structure.png?width=168&height=220&name=example-tiering-ou-structure.png)
 
-🌞 Créez des comptes admins avec chacun un tier d'accès assigné en terme de nom, par exemple avec pour le tier 1 `t1-fribery` et ainsi de suite pour chaque tier
+Vous n'êtes pas obligés de les nommer strictement comme sur le screen, mais il faut au moins trois tiers
 
-🌞 Pour sécuriser l'accès à votre AD, faites en sorte que seul un compte dans le groupe `t0` aie le droit de se connecter
+🌞 Créez des comptes admins avec chacun un tier d'accès assigné en terme de nom, par exemple avec pour le tier 1 `t1-fribery` et ainsi de suite pour chaque tier.
 
-- Pour faire ça, vous allez devoir passer par une GPO (et oui), on va voir ça juste en dessous
+Pour sécuriser l'accès à votre AD, faites en sorte que seul un compte dans le groupe `t0` aie le droit de se connecter.
+Pour faire ça, vous allez devoir passer par une GPO (et oui), on va voir ça juste en dessous
 
 # Les GPO
 
@@ -43,9 +44,10 @@ Il faut savoir quand utiliser l'un ou l'autre : l'intérêt d'une politique util
 
 # Reprenons le tiering
 
-🌞 Pour sécuriser l'accès à votre **DC**, il faut que seul les utilisateurs administrateurs du groupe `t0` puissent se connecter au DC. De ce fait : 
+🌞 Pour sécuriser l'accès à votre **DC**, il faut que seul les utilisateurs administrateurs du groupe `t0` puissent se connecter au DC.
+Là maintenant, est-ce que votre utilisateur `administrateur local` peut se connecter au DC ? Et un autre utilisateur non admin ?
 
-- Créez une **nouvelle GPO** sur l'OU **Domain controllers**
+🌞 Créez une **nouvelle GPO** sur l'OU **Domain controllers**
 
 > ⚠️ Il peut être compliqué de nommer des GPO. Chacun ses goûts, mais il faut absolument qu'une GPO puisse être claire rien qu'à son nom.
 > De ce fait, voici une convention de nommage que vous pouvez utiliser : 
@@ -90,19 +92,19 @@ Il faut savoir quand utiliser l'un ou l'autre : l'intérêt d'une politique util
     
     - Tout pareil
 
-🌞 Une fois la GPO créée et liée à l'OU DC, faites les tests. Avec un utilisateur du groupe T0, tentez de vous connecter sur le DC, localement ou à distance.
+🌞 Une fois la GPO créée et liée à l'OU DC, faites les tests. Avec un utilisateur du groupe T0, tentez de vous connecter sur le DC localement.
+Que se passe-t-il ?
+🌞 Tentez de vous connecter via votre machine client Windows 11 en RDP. Que se passe-t-il ?
 
-🌞 Tentez de faire la même avec votre compte administrateur créé au tout début dans l'OU Admin. Ça devrait marcher aussi ! D'où l'importance du tiering
+🌞 Tentez de faire la même avec votre compte `administrateur` créé au tout début dans l'OU Admin et dans le groupe `Administrateurs`. Que se passe-t-il ?
 
-🌞 Retirez votre groupe Admin de l'OU Admin du groupe `Administrateurs` du DC. Ça ne devrait plus marcher.
+🌞 Retirez votre groupe Admin dans l'OU Admin du groupe `Administrateurs` du DC, et retentez de vous connecter avec le compte `administrateur`. Que se passe-t-il ?
 
-🌞 Avec un autre compte utilisateur, tentez une connexion au DC. Normalement impossible
+🌞 Avec un autre compte utilisateur, tentez une connexion au DC localement. Quel message s'affiche ?
 
----
+🌞 Après tous ces tests, quel est l'intérêt du tiering si un compte dans un groupe `admin` ou `t1` se fait compromettre ?
 
-Vous voyez donc ici l'intérêt du tiering : si un compte admin se fait péter, si c'est un compte T1 par exemple, comme il n'est pas le compte admin le plus élevé, l'attaquant ne peut pas aller directement chopper le DC.
-
-> Ce n'est pas non plus une solution miracle : ne négligez pas le reste de la sécurité
+> Le tiering n'est pas non plus une solution miracle : ne négligez pas le reste de la sécurité
 
 # Les rôles d'un AD
 
@@ -135,6 +137,7 @@ On va mettre un serveur RDS en place.
 ---
 
 🌞 Sur votre DC, ajoutez le rôle RDS de type **Démarrage rapide** et basé sur **une session**.
+Prenez une capture d'écran de la page d'informations du rôle dans le Gestionnaire de serveur.
 
 Toutes les étapes sont disponibles ici : [Déploiement rapide d’un serveur RDS avec Windows Server 2016 | IT-Connect](https://www.it-connect.fr/deploiement-rapide-dun-serveur-rds-avec-windows-server-2016/)
 
@@ -142,12 +145,12 @@ Toutes les étapes sont disponibles ici : [Déploiement rapide d’un serveur RD
 
 Une fois le rôle installé, vous vous apercevrez que vous allez très vite être limité en nombre d'utilisateurs maximum connectés, car chaque utilisateur va vous bouffer une licence. Par connexion. De ce fait, vous allez avoir besoin d'un gestionnaire de licences.
 
-🌞 Ajoutez le gestionnaire de licences, et corrigez les propriétés de déploiement
+🌞 Ajoutez le gestionnaire de licences, et corrigez les propriétés de déploiement.
+Vous devriez ne plus avoir le message demandant une correction.
+Enfin, suivez la suite du tutoriel pour mettre en place les sessions RDS
 
-🌞 Enfin, suivez la suite du tutoriel pour mettre en place les sessions RDS
+🌞 Une fois tout en place, testez l'utilisation d'une session RDS avec un user d'une de vos OU dans un groupe ayant accès au DC en Bureau à Distance, via la machine Windows 11.
 
-🌞 Une fois tout en place, testez l'utilisation d'une session RDS avec un user d'une de vos OU dans un groupe ayant accès au DC en Bureau à Distance
-
-> À titre d'expérimentation, sur la GPO créée précédemment, ajoutez le groupe de votre utilisateur comme Autorisé à se connecter via le bureau à distance
+> À titre d'expérimentation, sur la GPO liée au DC créée précédemment, ajoutez le groupe de votre utilisateur comme **Autorisé à se connecter via le bureau à distance**
 
 # 
