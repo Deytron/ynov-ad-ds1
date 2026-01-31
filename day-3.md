@@ -128,7 +128,7 @@ On va mettre un serveur RDS en place.
 
 ---
 
-🐸 Sur votre DC, ajoutez le rôle RDS de type **Démarrage rapide** et basé sur **une session**.
+🌞 Sur votre DC, ajoutez le rôle RDS de type **Démarrage rapide** et basé sur **une session**.
 Prenez une capture d'écran de la page d'informations du rôle dans le Gestionnaire de serveur.
 
 Toutes les étapes sont disponibles ici : [Déploiement rapide d’un serveur RDS avec Windows Server 2016 | IT-Connect](https://www.it-connect.fr/deploiement-rapide-dun-serveur-rds-avec-windows-server-2016/)
@@ -137,10 +137,27 @@ Toutes les étapes sont disponibles ici : [Déploiement rapide d’un serveur RD
 
 Une fois le rôle installé, vous vous apercevrez que vous allez très vite être limité en nombre d'utilisateurs maximum connectés, car chaque utilisateur va vous bouffer une licence. Par connexion. De ce fait, vous allez avoir besoin d'un gestionnaire de licences.
 
-🐸 Ajoutez le gestionnaire de licences, et corrigez les propriétés de déploiement.
+🌞 Ajoutez le gestionnaire de licences, et corrigez les propriétés de déploiement.
 Vous devriez ne plus avoir le message demandant une correction.
 Enfin, suivez la suite du tutoriel pour mettre à disposition la QuickSessionCollection
 
-🐸 N'accordez l'accès au serveur RDS uniquement pour un utilisateur de l'une des OU que vous avez créé précédemment (Marketing ou autre...)
+🌞 N'accordez l'accès au serveur RDS uniquement pour un utilisateur de l'une des OU que vous avez créé précédemment (Marketing ou autre...)
 
-# 
+🌞 Pour tester, le bon fonctionnement, connectez-vous avec un utilisateur autorisé. Vous devriez le voir apparaître dans la liste des connexions de votre collection.
+
+🐸 Envoyez-lui un message ! 
+
+# Remote Desktop Web services
+
+Avec l'installation des services RDS, nous disposons également de l'accès au serveur via l'URL Web. Nous allons faire un test pour y accéder.
+
+🌞 Téléchargez Firefox ou Chrome sur le PC Windows 11. Ensuite, accédez à l'URL `https://nomdudomaineouip/rdweb` 
+Vous devriez tomber sur la page des applications publiées, comme vu dans la collection sur votre AD
+
+![](assets/2026-01-31-17-43-30-image.png)
+
+> Vous voyez toutes les autres applis présentes ? Ce sont des applications que l'on peut installer sur un serveur hôte et ajouter à une collection pour les présenter aux utilisateurs.
+
+🌞 Tentez d'ouvrir une application. Après connexion, l'application ouverte devrait tourner sur le serveur RDS et non sur votre PC client
+
+🐸 Dans la liste des applications publiées, ajoutez le programme **Connexion Bureau à distance**
