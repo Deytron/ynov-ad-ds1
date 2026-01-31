@@ -49,6 +49,8 @@ function CreateUser {
     param($User, $FirstName, $LastName, $Phone)
 
     # Faites votre code ici pour venir trouver l'utilisateur, et modifier le prénom, nom ou numéro de téléphone selon les paramètres donnés dans l'OU
+Écriture des objets: 100% (5/5), 35.12 Kio | 35.12 Mio/s, fait.
+
 }
 ```
 

@@ -139,10 +139,8 @@ Une fois le rôle installé, vous vous apercevrez que vous allez très vite êtr
 
 🐸 Ajoutez le gestionnaire de licences, et corrigez les propriétés de déploiement.
 Vous devriez ne plus avoir le message demandant une correction.
-Enfin, suivez la suite du tutoriel pour mettre en place les sessions RDS
+Enfin, suivez la suite du tutoriel pour mettre à disposition la QuickSessionCollection
 
-🐸 Une fois tout en place, testez l'utilisation d'une session RDS avec un user d'une de vos OU dans un groupe ayant accès au DC en Bureau à Distance, via la machine Windows 11.
-
-> À titre d'expérimentation, sur la GPO liée au DC créée précédemment, ajoutez le groupe de votre utilisateur comme **Autorisé à se connecter via le bureau à distance**
+🐸 N'accordez l'accès au serveur RDS uniquement pour un utilisateur de l'une des OU que vous avez créé précédemment (Marketing ou autre...)
 
 # 
