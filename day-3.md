@@ -160,4 +160,6 @@ Vous devriez tomber sur la page des applications publiées, comme vu dans la col
 
 🌞 Tentez d'ouvrir une application. Après connexion, l'application ouverte devrait tourner sur le serveur RDS et non sur votre PC client
 
-🐸 Dans la liste des applications publiées, ajoutez le programme **Connexion Bureau à distance**
+🐸 Dans la liste des applications publiées, ajoutez le programme **Bloc-notes**, puis testez la connexion
+
+🐸 Tentez une ouverture de session sur la page web avec un utilisateur d'une autre OU. Que se passe-t-il ?
