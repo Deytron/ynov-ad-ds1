@@ -1,4 +1,4 @@
-# Day 4
+# Day 4 (mais en fait 3 enfin c'est lundi t'as capté)
 
 # Les délégations
 
@@ -21,6 +21,8 @@ Il faut s'imaginer que ces délégations peuvent être utilisées par exemple :
 - Pour les comptes de service ne faisant qu'une tâche précise
 
 Dans notre cas, on va s'imaginer que dans votre boîte, un service support a besoin de créer et éditer des utilisateurs dans l'une de vos OU (au choix), car il y en a plein à créer chaque jour, et vous ne pouvez pas vous permettre de perdre du temps avec ça.
+
+<img src="assets/2026-01-31-16-27-08-image.png" title="" alt="" width="574">
 
 🌞 Créez une OU **Service support** avec à l'intérieur un groupe et un utilisateur du support dans ce groupe.
 
