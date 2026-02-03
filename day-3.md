@@ -162,4 +162,6 @@ Vous devriez tomber sur la page des applications publiées, comme vu dans la col
 
 🐸 Dans la liste des applications publiées, ajoutez le programme **Bloc-notes**, puis testez la connexion
 
-🐸 Tentez une ouverture de session sur la page web avec un utilisateur d'une autre OU. Que se passe-t-il ?
+🐸 Tentez une ouverture de session sur la page web avec un utilisateur d'une autre OU. Qu'est-il affiché ?
+
+🐸 Tentez également une connexion avec cet utilisateur via RDP. Que se passe-t-il ?
