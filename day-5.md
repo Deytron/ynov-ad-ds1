@@ -13,7 +13,15 @@ Mais il va aussi falloir un peu plus d'espace, sur un disque séparé. Même dan
 
 🌞 Dans votre hyperviseur, attachez un nouveau disque à votre VM. Mettez-lui **15 Go**.
 
-🌞 Une fois le disque placé et la machine rallumé, dans le Gestionnaire de serveurs, rendez-vous dans la partie **Services de fichiers et de stockage**, puis dans **Volumes > Pools de stockage**. Ajoutez votre nouveau disque dans le pool de stockage pour le rendre utilisable. Si besoin, relancez l'analyse du stockage.
+🌞 Une fois le disque placé et la machine rallumé, dans le Gestionnaire de partitions, attribuez-lui un nom et une lettre.
+
+🌞 Dans le Gestionnaire de serveurs, catégorie Partages, créez un nouveau partage au format **SMB - Rapide**
+
+🌞 N'autorisez que les utilisateurs d'une de vos OU à pouvoir effectuer des modifications. Donnez uniquement un accès en lecture aux autres groupes.
+
+🌞 Testez l'accès au partage. Sur le PC Windows 11, connectez-vous avec un utilisateur ayant le droit de faire des modifications au partage `\\\NOMDUDC\nompartage`, et créez un fichier
+
+🌞 Connectez-vous avec un autre utilisateur avec uniquement un droit de lecture, puis tentez sur ce partage de renommer le fichier. Que se passe-t-il ?
 
 
 
