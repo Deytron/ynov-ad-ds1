@@ -55,4 +55,4 @@ C'est plus facile à comprendre en manipulant pour le coup
 
 🌞 Changez d'utilisateur et connectez-vous avec le second, qui n'a que des droits de lecture. Sur le partage, tentez de renommer le fichier. Que se passe-t-il ?
 
-,
+🐸 Montrez à quoi ressemble l'onglet Sécurité du dossier 
