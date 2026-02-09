@@ -6,11 +6,11 @@ Il existe deux manières d'appliquer des stratégies de mots de passe et de forc
 
 - En GPO **Default Domain Policy**
 
-- En utilisant une **PSO **
+- En utilisant une **PSO**
 
 La deuxième option est la meilleure, car plus granulaire et plus précise en terme de ciblage. Par exemple, vous pouvez facilement faire en sorte que vos utilisateurs soient forcés à avoir un mot de passe d'au moins 8 caractères, et vos comptes admin le double.
 
-Tout le concept de mise en place d'une PSO et les explications sont présentes comme d'hab [ici]([Stratégie de mot de passe affinée (PSO) sous Windows Server](https://www.it-connect.fr/strategie-de-mot-de-passe-affinee-sous-windows-server-2012-r2/)) (oui je vais pas réinventer la roue)
+Tout le concept de mise en place d'une PSO et les explications sont présentes comme d'hab [ici](https://www.it-connect.fr/strategie-de-mot-de-passe-affinee-sous-windows-server-2012-r2/) (oui je vais pas réinventer la roue)
 
 ---
 
