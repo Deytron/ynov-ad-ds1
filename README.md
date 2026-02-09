@@ -96,3 +96,5 @@ Ce repo contiendra ici toutes les ressources et fiches de cours concernant le co
 - On corrige le TP
 
 - On fait ce que vous voulez
+
+Wlh y a la moitié des trucs qui sont faux
